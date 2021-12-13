@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>feateng package &mdash; feateng (Feature Engineering)  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> feateng (Feature Engineering)
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">feateng package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-feateng.data_clean">feateng.data_clean module</a></li>
+<li><a class="reference internal" href="#module-feateng.transformation">feateng.transformation module</a></li>
+<li><a class="reference internal" href="#module-feateng.utils">feateng.utils module</a></li>
+<li><a class="reference internal" href="#module-feateng">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">feateng (Feature Engineering)</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>feateng package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/feateng.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="feateng-package">
+<h1>feateng package<a class="headerlink" href="#feateng-package" title="Permalink to this headline">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-feateng.data_clean">
+<span id="feateng-data-clean-module"></span><h2>feateng.data_clean module<a class="headerlink" href="#module-feateng.data_clean" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">feateng.data_clean.</span></span><span class="sig-name descname"><span class="pre">Data_Clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class allows manipulating pandas dataframes to format data appropriately for analysis.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.cat_ohe">
+<span class="sig-name descname"><span class="pre">cat_ohe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.cat_ohe" title="Permalink to this definition">¶</a></dt>
+<dd><p>All categorical variables will be one-hot encoded. Useful for neural networks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.convert_vartypes">
+<span class="sig-name descname"><span class="pre">convert_vartypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_to_cat_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.convert_vartypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the data frame fed into DATA_CLEAN and converts variable types to the appropriate type needed for further analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>num_to_cat_cutoff</strong> (<em>int</em>) – Optional; default is 0.
+Will force a numeric variable to be categorical if the frequency of values is below the cutoff. If zero, no numeric variables will be converted to categorical.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.date_col_as_index">
+<span class="sig-name descname"><span class="pre">date_col_as_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_col</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.date_col_as_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the date column specified in the function into a date and turns it into an index for the pandas data frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>date_col</strong> (<em>date</em>) – Required; no default given
+Column to be made into the index. Will be converted to datetype if not already in that form.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.na_cutoff">
+<span class="sig-name descname"><span class="pre">na_cutoff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">na_cutoff_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.na_cutoff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Observes all columns in the data frame and removes those with missing values higher than the parameter specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>na_cutoff_percent</strong> (<em>float</em>) – Optional; default .3
+Will force variables with NA values higher than this percentage to be removed from the dataset.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.outliers">
+<span class="sig-name descname"><span class="pre">outliers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.outliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses Tukey’s Method to identify potential outliers in dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>data frame of probable outliers, data frame of possible outliers.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.plot_catvars">
+<span class="sig-name descname"><span class="pre">plot_catvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.plot_catvars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots categorical variables in bar plot for quick and dirty EDA analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pandas barplot object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.plot_numvars">
+<span class="sig-name descname"><span class="pre">plot_numvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.plot_numvars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots numeric variables in histogram for quick and dirty EDA analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pandas histogram object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.data_clean.Data_Clean.reduce_levels">
+<span class="sig-name descname"><span class="pre">reduce_levels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_cutoff_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Other'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.data_clean.Data_Clean.reduce_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the data frame fed into the DATA_ClEAN class to reduce the levels of infrequently occurring categorical variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>level_cutoff_percent</strong> (<em>float</em>) – Optional; defaults to .01
+Will force categorical levels with a frequency below this percent to be labeled “Other”.</p></li>
+<li><p><strong>other_name</strong> (<em>str</em>) – Optional; defaults to “Other”
+The name to give the infrequent levels of a categorical variable.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-feateng.transformation">
+<span id="feateng-transformation-module"></span><h2>feateng.transformation module<a class="headerlink" href="#module-feateng.transformation" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">feateng.transformation.</span></span><span class="sig-name descname"><span class="pre">Transformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation.box_cox">
+<span class="sig-name descname"><span class="pre">box_cox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drop_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation.box_cox" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation.feature_select">
+<span class="sig-name descname"><span class="pre">feature_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ppscore'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation.feature_select" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation.normalize">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation.normalize" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation.pca">
+<span class="sig-name descname"><span class="pre">pca</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation.pca" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation.standard_normal">
+<span class="sig-name descname"><span class="pre">standard_normal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation.standard_normal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation.step_rm">
+<span class="sig-name descname"><span class="pre">step_rm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation.step_rm" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="feateng.transformation.Transformation.transform_new">
+<span class="sig-name descname"><span class="pre">transform_new</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.transformation.Transformation.transform_new" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-feateng.utils">
+<span id="feateng-utils-module"></span><h2>feateng.utils module<a class="headerlink" href="#module-feateng.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="feateng.utils.bc_df">
+<span class="sig-prename descclassname"><span class="pre">feateng.utils.</span></span><span class="sig-name descname"><span class="pre">bc_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.utils.bc_df" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="feateng.utils.bc_lambda">
+<span class="sig-prename descclassname"><span class="pre">feateng.utils.</span></span><span class="sig-name descname"><span class="pre">bc_lambda</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.utils.bc_lambda" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="feateng.utils.tukeys_method">
+<span class="sig-prename descclassname"><span class="pre">feateng.utils.</span></span><span class="sig-name descname"><span class="pre">tukeys_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#feateng.utils.tukeys_method" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-feateng">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-feateng" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Amanda Park &amp; Phil Sattler.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
