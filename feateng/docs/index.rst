@@ -4,14 +4,14 @@
    contain the root `toctree` directive.
 
 Welcome to Feature Engineering's (aka feateng's) documentation!
-==================================================
+================================================================
 
 .. toctree::
    :maxdepth: 4
    
    source/data_clean
    source/transformation
-   source/utils
+   source/modules
 
 Indices and tables
 ==================
