@@ -1,7 +1,7 @@
 transformation module
 ===========================
 
-.. automodule:: interactive_visuals
+.. automodule:: transformation
    :members:
    :undoc-members:
    :show-inheritance:
