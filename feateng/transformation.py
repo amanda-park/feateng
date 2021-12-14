@@ -7,6 +7,9 @@ import ppscore as pps
 
 
 class Transformation:
+    """This class allows transforming variables in pandas dataframes and save the manipulation made for future analysis reruns.
+    """ 
+    
     def __init__(self,df):
         pd.set_option('display.float_format', lambda x: '%.6f' % x)
         #core attributes
@@ -23,6 +26,10 @@ class Transformation:
         self._ls_features = []
          
     def step_rm(self):
+        """Removes a transformation and its optional attributes appended to a dataframe.
+
+        :returns: None
+        """
         #if the step is standard_normal(), then remove optional attributes
         if self._ls_steps[-1] == 'standard_normal()':
             del self._ls_mean[-1]
@@ -46,6 +53,10 @@ class Transformation:
         self._df = self._ls_hist[-1]
         
     def standard_normal(self):
+        """Applies a standard normal transformation to data.
+
+        :returns: None
+        """
         #append mean and std step to optional attributes
         trans_df = self._df.copy()
         self._ls_mean.append(trans_df.mean(axis=0))
@@ -58,6 +69,10 @@ class Transformation:
         self._ls_steps.append('standard_normal()')
         
     def normalize(self):
+        """Applies a normalization step to data.
+
+        :returns: None
+        """
         #append mean and std step to optional attributes
 
         trans_df = self._df.copy()
@@ -71,6 +86,10 @@ class Transformation:
         self._ls_steps.append('normalize()')
     
     def box_cox(self,drop_cols = None):
+        """Applies a Box-Cox transformation to data.
+
+        :returns: None
+        """
         if drop_cols == None:
             float_df = self._df.copy()
         else:
@@ -110,6 +129,10 @@ class Transformation:
         self._ls_steps.append('box_cox()')
         
     def pca(self):
+        """Applies Principal Component Analysis to data and appends variables with PC components to data.
+
+        :returns: None
+        """
         trans_df = self._df.copy()
         cov = trans_df.cov().to_numpy()
         eigvals, eigvecs = la.eig(cov)
@@ -127,6 +150,16 @@ class Transformation:
         self._ls_steps.append('pca()')        
         
     def feature_select(self, y_df, method='ppscore', cutoff = .1):
+        """Applies feature selection to your dataframe based on various methodologies.
+
+        :param DataFrame y_df: Required
+            A pandas DataFrame with the data of the response variable.
+
+        :param str method: Optional; defaults to "ppscore"
+            The method used to choose significant variables in dataset. Defaults to PPScore; else defaults to Pearson correlation.
+
+        :returns: None
+        """
         trans_df = self._df.copy()
         if method == 'ppscore':
             trans_df['y'] = y_df
@@ -147,6 +180,14 @@ class Transformation:
         return outcome
     
     def transform_new(self,new_df):
+        """Applies previously stored transformations to a brand-new DataFrame.
+
+        :param DataFrame new_df: Required
+            A new pandas DataFrame to apply stored transformations to.
+
+        :returns: None
+        """
+        
         pd.set_option('display.float_format', lambda x: '%.6f' % x)
         j,k,l,m,n = 0,0,0,0,0
         for i in range(len(self._ls_steps)):

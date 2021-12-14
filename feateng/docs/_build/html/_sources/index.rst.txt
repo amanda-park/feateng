@@ -11,7 +11,6 @@ Welcome to Feature Engineering's (aka feateng's) documentation!
    
    source/data_clean
    source/transformation
-   source/modules
 
 Indices and tables
 ==================

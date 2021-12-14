@@ -91,7 +91,6 @@
               <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">data_clean module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transformation.html">transformation module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">feateng</a></li>
 </ul>
 
             
@@ -159,178 +158,117 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <section id="module-interactive_visuals">
-<span id="data-clean-module"></span><h1>data_clean module<a class="headerlink" href="#module-interactive_visuals" title="Permalink to this headline">¶</a></h1>
+  <section id="module-data_clean">
+<span id="data-clean-module"></span><h1>data_clean module<a class="headerlink" href="#module-data_clean" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="interactive_visuals.Interactive_Visuals">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">interactive_visuals.</span></span><span class="sig-name descname"><span class="pre">Interactive_Visuals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interactive_visuals.Interactive_Visuals" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="data_clean.Data_Clean">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">data_clean.</span></span><span class="sig-name descname"><span class="pre">Data_Clean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This class allows creating dynamic visualizations that match ggplot’s format. Current options include the following:</p>
-<ul class="simple">
-<li><p>Histogram</p></li>
-<li><p>Bar chart</p></li>
-<li><p>Scatterplot</p></li>
-<li><p>Line chart</p></li>
-<li><p>Control chart</p></li>
-</ul>
+<p>This class allows manipulating pandas dataframes to format data appropriately for analysis.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="interactive_visuals.Interactive_Visuals.barplot">
-<span class="sig-name descname"><span class="pre">barplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Predictor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ggplot2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">barmode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'stack'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_horizontal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interactive_visuals.Interactive_Visuals.barplot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a Plotly bar plot. Bar plots work with categorical data. Function computes appropriate counts and percentages to create bar plots.</p>
+<dt class="sig sig-object py" id="data_clean.Data_Clean.cat_ohe">
+<span class="sig-name descname"><span class="pre">cat_ohe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.cat_ohe" title="Permalink to this definition">¶</a></dt>
+<dd><p>All categorical variables will be one-hot encoded. Useful for neural networks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>str</em>) – Required. The name of a categorical variable in the data frame you want to be your predictor.</p></li>
-<li><p><strong>color</strong> (<em>str</em>) – Optional; default None. A factor variable that you want to visualize your bar plot.</p></li>
-<li><p><strong>is_horizontal</strong> (<em>bool</em>) – Optional, default False. Will swap x and y values so that the plot appears horizontally.</p></li>
-<li><p><strong>opacity</strong> (<em>float</em>) – Optional, default 1. The opacity of the bars in the histogram. Can be set between 0 and 1.</p></li>
-<li><p><strong>template</strong> (<em>str</em>) – Optional, default ggplot2 (chosen to align with R visualizations). Changes template of plot from default Plotly to another format.</p></li>
-<li><p><strong>barmode</strong> (<em>str</em>) – Optional, default “stack”. Options: [‘stack’, ‘group’, ‘overlay’, ‘relative’]</p></li>
-<li><p><strong>has_title</strong> (<em>bool</em>) – Optional, default True. Determines if plot has a title or not. Default title is provided if True, but can be customized with title.</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – Optional, default None. Changes title of plot from the default.</p></li>
-<li><p><strong>is_percent</strong> (<em>bool</em>) – Optional, default False. Set true to plot a percentage-based stacked bar plot.</p></li>
-<li><p><strong>show_num</strong> (<em>bool</em>) – Optional, default False. Show percentages on stacked bar plot.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Plotly fig object</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="interactive_visuals.Interactive_Visuals.control_chart_ADTK">
-<span class="sig-name descname"><span class="pre">control_chart_ADTK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Control</span> <span class="pre">Chart</span> <span class="pre">Example'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Actuals'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_axis_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Percent'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interactive_visuals.Interactive_Visuals.control_chart_ADTK" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a Plotly control chart of a metric measured over time.</p>
+<dt class="sig sig-object py" id="data_clean.Data_Clean.convert_vartypes">
+<span class="sig-name descname"><span class="pre">convert_vartypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_to_cat_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.convert_vartypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the data frame fed into DATA_CLEAN and converts variable types to the appropriate type needed for further analysis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> (<em>Dataframe</em>) – <p>Required. Data frame fed in should have these columns:</p>
-<ul>
-<li><p>Date (as index)</p></li>
-<li><p>Values</p></li>
-<li><p>Median</p></li>
-<li><p>UCL</p></li>
-<li><p>LCL</p></li>
-<li><p>Violation (value between 0 and 1 returning the probability of a point being an outlier)</p></li>
-</ul>
-</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – A string that will define the title of your Control Chart. Default is “Control Chart Example”.</p></li>
-<li><p><strong>value_name</strong> (<em>str</em>) – A string that represent the name of the values in the control chart. Default is “Actuals”.</p></li>
-<li><p><strong>y_axis_name</strong> (<em>str</em>) – A string that represent the name of the values in the control chart. Default is “Actuals”.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>num_to_cat_cutoff</strong> (<em>int</em>) – Optional; default is 0.
+Will force a numeric variable to be categorical if the frequency of values is below the cutoff. If zero, no numeric variables will be converted to categorical.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Plotly fig object.</p>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="interactive_visuals.Interactive_Visuals.forecast_CV_surge">
-<span class="sig-name descname"><span class="pre">forecast_CV_surge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Cross-Validation'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Actuals'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Worst-Case'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Best-Case'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_bound_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'red'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_bound_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blue'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicted_color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'orange'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fill_color_and_opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rgba(50,</span> <span class="pre">50,</span> <span class="pre">50,</span> <span class="pre">.2)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll_avg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roll_avg_num</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">7</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interactive_visuals.Interactive_Visuals.forecast_CV_surge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a Plotly line chart of a metric alongside bounds and predicted values. Can be used for either cross-validation or forecasting.</p>
+<dt class="sig sig-object py" id="data_clean.Data_Clean.date_col_as_index">
+<span class="sig-name descname"><span class="pre">date_col_as_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">date_col</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.date_col_as_index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the date column specified in the function into a date and turns it into an index for the pandas data frame.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> (<em>Dataframe</em>) – <p>Required to be fed into the class. Note for this, the data frame fed in should have these columns:</p>
-<ul>
-<li><p>Date (as index)</p></li>
-<li><p>Values (known, not forecasted)</p></li>
-<li><p>Predicted (forecasted expected values)</p></li>
-<li><p>UB (upper bound; ex: prediction interval 95%)</p></li>
-<li><p>LB (lower bound)</p></li>
-</ul>
-</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – A string that will define the title of your graph. Default is “Cross-Validation”.</p></li>
-<li><p><strong>value_name</strong> (<em>str</em>) – A string that represent the name of the values in the graph. Default is “Actuals”.</p></li>
-<li><p><strong>upper_bound_name</strong> (<em>str</em>) – A string that represents the name of the upper bound in the graph. Default is “Worst-Case”.</p></li>
-<li><p><strong>lower_bound_name</strong> (<em>str</em>) – A string that represents the name of the lower bound in the graph. Default is “Best-Case”.</p></li>
-<li><p><strong>lower_bound_color</strong> (<em>str</em>) – A string that represents the color of the lower bound in the graph. Default is “blue”.</p></li>
-<li><p><strong>upper_bound_color</strong> (<em>str</em>) – A string that represents the color of the upper bound in the graph. Default is “red”.</p></li>
-<li><p><strong>predicted_color</strong> (<em>str</em>) – A string that represents the color of the predicted linke in the graph. Default is “orange”.</p></li>
-<li><p><strong>fill_color_and_opacity</strong> (<em>str</em>) – A string that represents the color and opacity of the fill. Default is ‘rgba(50,50,50.2)’, which creates a light gray tint between the lower and upper bounds. To make opacity clear and have no shading appear, set the final value in rgba to be 0.</p></li>
-<li><p><strong>roll_avg</strong> (<em>bool</em>) – Boolean to determine if need to apply rolling average to data.</p></li>
-<li><p><strong>roll_avg_num</strong> (<em>int</em>) – Integer indicating frequency to apply rolling average on. Default is 7.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>date_col</strong> (<em>date</em>) – Required; no default given
+Column to be made into the index. Will be converted to datetype if not already in that form.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Plotly fig object.</p>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="interactive_visuals.Interactive_Visuals.histogram">
-<span class="sig-name descname"><span class="pre">histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Predictor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_horizontal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">facet_col</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">facet_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marginal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ggplot2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interactive_visuals.Interactive_Visuals.histogram" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a Plotly histogram. Plotly histograms can work with both numeric and categorical data.</p>
+<dt class="sig sig-object py" id="data_clean.Data_Clean.na_cutoff">
+<span class="sig-name descname"><span class="pre">na_cutoff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">na_cutoff_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.3</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.na_cutoff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Observes all columns in the data frame and removes those with missing values higher than the parameter specified.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>str</em>) – Required. The name of a numeric variable in the data frame you want to be your predictor.</p></li>
-<li><p><strong>y</strong> (<em>str</em>) – Optional, default None. <strong>Using this may give weird and unexpected results, as Plotly tries to adapt to data fed in!</strong></p></li>
-<li><p><strong>is_horizontal</strong> (<em>bool</em>) – Optional, default False. Will swap x and y values so that the plot appears horizontally.</p></li>
-<li><p><strong>color</strong> (<em>str</em>) – Optional; default None. A factor variable that you want to visualize your histogram.</p></li>
-<li><p><strong>facet_col</strong> (<em>str</em>) – Optional; default None. A factor variable you want to facet your histogram on vertically.</p></li>
-<li><p><strong>facet_row</strong> (<em>str</em>) – Optional; default None. A factor variable you want to facet your histogram on horizontally.</p></li>
-<li><p><strong>bins</strong> (<em>int</em>) – Optional; default 20. The number of bins you want your histogram to have.</p></li>
-<li><p><strong>opacity</strong> (<em>float</em>) – Optional, default 1. The opacity of the bars in the histogram. Can be set between 0 and 1.</p></li>
-<li><p><strong>marginal</strong> (<em>str</em>) – Optional; default None. Can set to “rug”, “box”, or “violin”.</p></li>
-<li><p><strong>template</strong> (<em>str</em>) – Optional, default ggplot2 (chosen to align with R visualizations). Changes template of plot from default Plotly to another format.</p></li>
-<li><p><strong>has_title</strong> (<em>bool</em>) – Optional, default True. Determines if plot has a title or not. Default title is provided if True, but can be customized with title.</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – Optional, default None. Changes title of plot from the default.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>na_cutoff_percent</strong> (<em>float</em>) – Optional; default .3
+Will force variables with NA values higher than this percentage to be removed from the dataset.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Plotly fig object</p>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="interactive_visuals.Interactive_Visuals.linechart">
-<span class="sig-name descname"><span class="pre">linechart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Predictor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Response'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ggplot2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interactive_visuals.Interactive_Visuals.linechart" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a Plotly line chart of a numeric and date variable</p>
+<dt class="sig sig-object py" id="data_clean.Data_Clean.outliers">
+<span class="sig-name descname"><span class="pre">outliers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.outliers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses Tukey’s Method to identify potential outliers in dataset.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>str</em>) – Required. The name of a <strong>date</strong> variable in the data frame you want to be your predictor.</p></li>
-<li><p><strong>y</strong> (<em>str</em>) – Required. The name of a <strong>numeric</strong> variable in the data frame you want to be your response.</p></li>
-<li><p><strong>color</strong> (<em>str</em>) – Optional; default None. A variable that you want to visualize your scatterplot across. Can be numeric or factor.</p></li>
-<li><p><strong>template</strong> (<em>str</em>) – Optional, default ggplot2 (chosen to align with R visualizations). Changes template of plot from default Plotly to another format.</p></li>
-<li><p><strong>has_title</strong> (<em>bool</em>) – Optional, default True. Determines if plot has a title or not. Default title is provided if True, but can be customized with title.</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – Optional, default None. Changes title of plot from the default.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Plotly fig object.</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>data frame of probable outliers, data frame of possible outliers.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="interactive_visuals.Interactive_Visuals.scatterplot">
-<span class="sig-name descname"><span class="pre">scatterplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Predictor'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Response'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jitter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jitter_sd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marg_x</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">marg_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trendline</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opacity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ggplot2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">has_title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#interactive_visuals.Interactive_Visuals.scatterplot" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a Plotly scatter plot of two numeric variables.</p>
+<dt class="sig sig-object py" id="data_clean.Data_Clean.plot_catvars">
+<span class="sig-name descname"><span class="pre">plot_catvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.plot_catvars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots categorical variables in bar plot for quick and dirty EDA analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pandas barplot object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_clean.Data_Clean.plot_numvars">
+<span class="sig-name descname"><span class="pre">plot_numvars</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.plot_numvars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots numeric variables in histogram for quick and dirty EDA analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pandas histogram object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="data_clean.Data_Clean.reduce_levels">
+<span class="sig-name descname"><span class="pre">reduce_levels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level_cutoff_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Other'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#data_clean.Data_Clean.reduce_levels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modifies the data frame fed into the DATA_ClEAN class to reduce the levels of infrequently occurring categorical variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>str</em>) – Required. The name of a <strong>numeric</strong> variable in the data frame you want to be your predictor.</p></li>
-<li><p><strong>y</strong> (<em>str</em>) – Required. The name of a <strong>numeric</strong> variable in the data frame you want to be your response.</p></li>
-<li><p><strong>jitter</strong> (<em>bool</em>) – Optional; default False. Setting to true adds noise to data to stop points from overlapping on each other.</p></li>
-<li><p><strong>jitter_sd</strong> (<em>float</em>) – Optional; default .1. Determines the variability of random noise applied to your data.</p></li>
-<li><p><strong>color</strong> (<em>str</em>) – Optional; default None. A variable that you want to visualize your scatterplot across. Can be numeric or factor.</p></li>
-<li><p><strong>marg_x</strong> (<em>str</em>) – Optional; default None. Set to either “histogram”, “box”, “rug”, or “violin” to visualize distribution of x variable.</p></li>
-<li><p><strong>marg_y</strong> (<em>str</em>) – Optional; default None. Set to either “histogram”, “box”, “rug”, or “violin” to visualize distribution of y variable.</p></li>
-<li><p><strong>opacity</strong> (<em>float</em>) – Optional, default 1. The opacity of the bars in the histogram. Can be set between 0 and 1.</p></li>
-<li><p><strong>trendline</strong> (<em>str</em>) – Optional, default None. Sets a trendline for scatterplot if “ols” is chosen. If categorical color chosen, will fit OLS to each factor of color.</p></li>
-<li><p><strong>template</strong> (<em>str</em>) – Optional, default ggplot2 (chosen to align with R visualizations). Changes template of plot from default Plotly to another format.</p></li>
-<li><p><strong>has_title</strong> (<em>bool</em>) – Optional, default True. Determines if plot has a title or not. Default title is provided if True, but can be customized with title.</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – Optional, default None. Changes title of plot from the default.</p></li>
+<li><p><strong>level_cutoff_percent</strong> (<em>float</em>) – Optional; defaults to .01
+Will force categorical levels with a frequency below this percent to be labeled “Other”.</p></li>
+<li><p><strong>other_name</strong> (<em>str</em>) – Optional; defaults to “Other”
+The name to give the infrequent levels of a categorical variable.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Plotly fig object.</p>
+<dd class="field-even"><p>None</p>
 </dd>
 </dl>
 </dd></dl>

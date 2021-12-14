@@ -1,7 +1,7 @@
 data\_clean module
 ===========================
 
-.. automodule:: interactive_visuals
+.. automodule:: data_clean
    :members:
    :undoc-members:
    :show-inheritance:

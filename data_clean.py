@@ -1,4 +1,9 @@
+import numpy as np
 import pandas as pd
+import scipy as sp
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn import preprocessing
 from utils import tukeys_method
 
 
